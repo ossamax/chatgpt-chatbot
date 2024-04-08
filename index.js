@@ -18,9 +18,9 @@ async function main() {
       const messages = chatHistory.map((role, content) => ({ role, content }));
       messages.push({ role: "user", content: userInput });
 
+      // calling openai function
       const completion = await openai.chat.completions.create({
         messages: [{ role: "user", content: userInput }],
-
         model: "gpt-3.5-turbo",
       });
 
